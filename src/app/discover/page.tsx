@@ -5,11 +5,12 @@ import BottomNavBar from "@/components/layout/BottomNavBar";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState, Suspense } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 import { Search, SlidersHorizontal, ArrowUpRight, Sparkles, ChevronDown } from "lucide-react";
 
-const containerVariants: Variants = {
+const containerVariants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
@@ -17,13 +18,13 @@ const containerVariants: Variants = {
     }
 };
 
-const itemVariants: Variants = {
+const itemVariants = {
     hidden: { opacity: 0, scale: 0.98, y: 30 },
     show: {
         opacity: 1,
         scale: 1,
         y: 0,
-        transition: { type: "spring", stiffness: 100, damping: 20 }
+        transition: { type: "spring" as const, stiffness: 100, damping: 20 }
     }
 };
 
@@ -190,9 +191,9 @@ function DiscoverContent() {
                                                 <p className="font-label text-[8px] text-white/40 uppercase tracking-[0.3em]">Estimated Value</p>
                                                 <p className="font-headline text-3xl text-secondary font-black tracking-tighter">${match.valuation.toLocaleString()}</p>
                                             </div>
-                                            <button className="h-14 px-8 rounded-full bg-secondary text-primary font-headline uppercase tracking-tighter font-black text-sm hover:translate-x-2 transition-transform">
+                                            <Link href="/success" className="h-14 px-8 rounded-full bg-secondary text-primary font-headline uppercase tracking-tighter font-black text-sm hover:translate-x-2 transition-transform">
                                                 Swap Now
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
