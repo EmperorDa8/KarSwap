@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${manrope.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body bg-surface text-on-surface overflow-x-hidden">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-body bg-surface text-on-surface overflow-x-hidden">
         <AuthProvider>
           {children}
         </AuthProvider>
