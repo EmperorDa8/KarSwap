@@ -1,4 +1,3 @@
-// This file is intentionally a stub.
-// Active proxy logic is in src/middleware.ts
-const _stub = true;
-export default _stub;
+// Proxy logic is handled in src/middleware.ts
+// This file exists as a placeholder only and contains no Next.js proxy logic.
+export {};

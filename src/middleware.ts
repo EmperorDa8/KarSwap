@@ -14,7 +14,7 @@ function injectTokenFromHeader(request: NextRequest): void {
   request.cookies.set(`sb-${getProjectRef()}-auth-token`, token);
 }
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   injectTokenFromHeader(request);
   let supabaseResponse = NextResponse.next({ request });
 
