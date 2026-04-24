@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['karswap2754.builtwithrocket.new'],
   images: {
     remotePatterns: [
       {

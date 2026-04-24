@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState, Suspense } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { Heart, X, Info, Sparkles, Receipt, Droplets, Gauge } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Match {
     id: string;
@@ -37,6 +38,7 @@ function MatchContent() {
     const [showReport, setShowReport] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
 
     // Swiping logic
     const x = useMotionValue(0);
@@ -74,6 +76,8 @@ function MatchContent() {
     const handleSwipe = (direction: "left" | "right") => {
         if (direction === "right") {
             console.log("Matched with", matches[currentIndex].make);
+            router.push("/success");
+            return;
         }
         setCurrentIndex((prev) => prev + 1);
         x.set(0);
